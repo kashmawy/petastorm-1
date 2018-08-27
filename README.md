@@ -13,19 +13,11 @@ testing out petastorm however (and is therefore shown in the examples).
 Please follow the following instructions to develop Petastorm:
 
 1. ```virtualenv env```
-2. ```bash
-source env/bin/activate
-```
-3. ```bash
-pip install -U pip
-```
-4. ```bash
-For tensorflow with GPU: pip install -e .[opencv,tf,test]. For tensorflow with GPU: pip install -e .[opencv, tf_gpu, test]
-```
+2. ```source env/bin/activate```
+3. ```pip install -U pip```
+4. For tensorflow with GPU: ```pip install -e .[opencv,tf,test]```. For tensorflow with GPU: ```pip install -e .[opencv, tf_gpu, test]```
 
-To run tests, please run the following: ```bash
-pytest
-```
+To run tests, please run the following: ```pytest```
 
 ## Usage
 ### Generating a dataset
