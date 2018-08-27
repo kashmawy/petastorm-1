@@ -15,8 +15,6 @@
 import abc
 import six
 
-from petastorm.selectors import RowGroupSelectorBase
-
 
 @six.add_metaclass(abc.ABCMeta)
 class PredicateBase(object):
