@@ -17,19 +17,6 @@ import six
 
 
 @six.add_metaclass(abc.ABCMeta)
-class PredicateBase(object):
-    """ Base class for row predicates """
-
-    @abc.abstractmethod
-    def get_fields(self):
-        pass
-
-    @abc.abstractmethod
-    def do_include(self, values):
-        pass
-
-
-@six.add_metaclass(abc.ABCMeta)
 class RowGroupSelectorBase(object):
     """ Base class for row group selectors."""
 
