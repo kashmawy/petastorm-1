@@ -10,15 +10,15 @@ Note that although petastorm depends on opencv, it is defined as an extra packag
 to be installed by debian package (or source) as opposed to pip. It is recommended to install it when
 testing out petastorm however (and is therefore shown in the examples).  
 
-Please follow the following instructions to develop Petastorm:
+Install with tensorflow CPU dependency:
+```bash
+pip install petastorm[opencv, tf]
+```
 
-1. ```virtualenv env```
-2. ```source env/bin/activate```
-3. ```pip install -U pip```
-4. For tensorflow without GPU: ```pip install -e .[opencv,tf,test]```. For tensorflow with GPU: ```pip install -e .[opencv, tf_gpu, test]```
-
-To run tests, please run the following: ```pytest```
-
+Install with tensorflow GPU dependency:
+```bash
+pip install petastorm[opencv, tf_gpu]
+```
 ## Usage
 ### Generating a dataset
 A dataset created using petastorm is stored in Parquet format. On top of Parquet schema, petastorm also stores higher level schema information that makes multidimensional arrays into a native part of a petastorm dataset. 
@@ -108,4 +108,3 @@ TODO: Reading a dataset from pytorch
 # Troubleshooting
 See the [Troubleshooting](docs/troubleshooting.md) page and please submit the [ticket](https://github.com/uber/petastorm/issues/new)
 if you can't find an answer.
-
