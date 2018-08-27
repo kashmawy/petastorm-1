@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import collections
 import logging
 import os
+import six
 import warnings
 
-import collections
-import six
 from pyarrow import parquet as pq
 
 from petastorm.cache import NullCache
