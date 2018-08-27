@@ -15,6 +15,7 @@ import sys
 
 import setuptools
 from setuptools import setup
+from petastorm import __version__
 
 PACKAGE_NAME = 'petastorm'
 
@@ -37,8 +38,6 @@ EXTRA_REQUIRE = {
 }
 
 packages = setuptools.find_packages()
-
-from petastorm import __version__
 
 setup(
     name=PACKAGE_NAME,
