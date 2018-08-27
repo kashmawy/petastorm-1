@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from petastorm import RowGroupSelectorBase
+from petastorm.predicates import RowGroupSelectorBase
 
 
 class SingleIndexSelector(RowGroupSelectorBase):
