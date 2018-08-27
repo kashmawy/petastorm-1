@@ -15,41 +15,12 @@
 """
 Predicates for petastorm
 """
-import abc
 import collections
 import hashlib
 import numpy as np
-import six
 import sys
 
-
-@six.add_metaclass(abc.ABCMeta)
-class PredicateBase(object):
-    """ Base class for row predicates """
-
-    @abc.abstractmethod
-    def get_fields(self):
-        pass
-
-    @abc.abstractmethod
-    def do_include(self, values):
-        pass
-
-
-@six.add_metaclass(abc.ABCMeta)
-class RowGroupSelectorBase(object):
-    """ Base class for row group selectors."""
-
-    @abc.abstractmethod
-    def get_index_names(self):
-        """ Return list of indexes required for given selector."""
-        pass
-
-    @abc.abstractmethod
-    def select_row_groups(self, index_dict):
-        """ Return set of row groups which are selected."""
-        pass
-
+from petastorm.selectors import PredicateBase
 
 
 def _string_to_bucket(string, bucket_num):
