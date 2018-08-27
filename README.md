@@ -12,9 +12,7 @@ testing out petastorm however (and is therefore shown in the examples).
 
 Please follow the following instructions to develop Petastorm:
 
-1. ```bash
-virtualenv env
-```
+1. ```virtualenv env```
 2. ```bash
 source env/bin/activate
 ```
