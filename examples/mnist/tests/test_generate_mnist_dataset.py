@@ -18,7 +18,7 @@ import pytest
 import sys
 import torch  # pylint: disable=unused-import
 
-import examples.mnist.main as main
+import examples.mnist.pytorch_example as pytorch_example
 import numpy as np
 
 from examples.mnist.generate_petastorm_mnist import download_mnist_data, \
@@ -145,12 +145,12 @@ def test_full_pytorch_example(large_mock_mnist_data, tmpdir):
 
     torch.manual_seed(1)
     device = torch.device('cpu')
-    model = main.Net().to(device)
+    model = pytorch_example.Net().to(device)
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.5)
 
     with DataLoader(Reader('{}/train'.format(dataset_url), reader_pool=DummyPool(), num_epochs=1),
-                    batch_size=32, transform=main._transform_row) as train_loader:
-        main.train(model, device, train_loader, 10, optimizer, 1)
+                    batch_size=32, transform=pytorch_example._transform_row) as train_loader:
+        pytorch_example.train(model, device, train_loader, 10, optimizer, 1)
     with DataLoader(Reader('{}/test'.format(dataset_url), reader_pool=DummyPool(), num_epochs=1),
-                    batch_size=100, transform=main._transform_row) as test_loader:
-        main.test(model, device, test_loader)
+                    batch_size=100, transform=pytorch_example._transform_row) as test_loader:
+        pytorch_example.test(model, device, test_loader)
