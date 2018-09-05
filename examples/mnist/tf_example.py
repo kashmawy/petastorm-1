@@ -103,11 +103,11 @@ def main():
                         metavar='S',
                         help='hdfs:// or file:/// URL to the MNIST petastorm dataset')
     parser.add_argument('--epochs', type=int, default=100, metavar='N',
-                        help='number of epochs to train (default: 10)')
+                        help='number of epochs to train (default: 100)')
     parser.add_argument('--batch-size', type=int, default=100, metavar='N',
-                        help='input batch size for training (default: 64)')
+                        help='input batch size for training (default: 100)')
     parser.add_argument('--log-interval', type=int, default=10, metavar='N',
-                        help='how many batches to wait before logging training status')
+                        help='how many batches to wait before logging training status (default: 10)')
     args = parser.parse_args()
 
     train_reader = Reader('{}/train'.format(args.dataset_url))
